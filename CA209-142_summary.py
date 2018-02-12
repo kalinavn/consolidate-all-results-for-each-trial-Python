@@ -1,34 +1,11 @@
 # Works! for TP, TH, MSI, MutSig, manifest (from paired file of Sujaya) and from the original manifest
- 
-# (either paired with corresponding control or alone)
-# then find set of ID (sex, project number, type of data, etc) Here I need to add a lot more! Use manifest from Sujaya
-# find the information about the following results:
-#  LOH (loss of heterozygocity)
-#  TP (Tumore purity) - DONE!
-#  TH (Tumore heterogeneuty) - DONE!
-#  MutSig (Mutation signature) - DONE!
-#  MSI (Microsatellite instability) - DONE!
-#  CNP (copy number variation)
-#  Somatic (?)
-#  Neoantigen (in-silico ID of potential antigens for cancer therapy)
-#  mayby more, Stefan said there are 8 main groups of characteristics. Need to verify which ones
-
-# Approach:
-# I want to first creat a list or a dictionary for the IDs that will be tracked for each characteristic
-# The ID comes from the unique name for each sample. 
-# In some cases the data is the result of paired tumor and normal data sets
-# in other cases there is no pair, only tumore sample or a normal (here called germline) sample
-# results are linked to the name of either of the paired IDs or in some cases has a completely diffrent name
-# I found that MSI results are zipped for each sample, but the ziped name does not match to any sample ID. However, after unzipping the folders the files with unique sample ID appear
-
-
+# succesfully processed CA209-142, 141 trials
+# Note, this is developed only for trails data that was processed before SB processing
 
 MasterDict={}
 import os, tarfile 
 import zipfile
 
-
-print "    Welcome to the program to summarize each trial results"
 home=(raw_input("    The path to the trial folder is "))
 
 # home='/Users/kalinavn/Desktop/temp_data_BMS/input'
