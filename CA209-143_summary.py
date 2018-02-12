@@ -2,6 +2,7 @@
 # this is to process the data from the SB processed outputs
 # Note: before-SB processing has different structure of files and naming, use CA209-142_summary.py script for that
 
+# issues: SB reports are missing the total number of mutations per cluster in tumor het. reports
 MasterDict={}
 import os
 import multiprocessing 
@@ -376,7 +377,7 @@ for P1 in MasterDict:
 print 'finished MSI'
 ##################  End of MSI data  #########################################                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
 ######################### Start Mutation Signature (MutSig)  ############################
-### First need to unzip file, each has a unique name, so I can unzip in the same directory
+
 for a1 in MasterDict:    
     for b1 in MasterDict[a1]:
         MasterDict[a1][b1]['top_MutSig']='NA'
@@ -706,8 +707,5 @@ import shutil
 
 shutil.rmtree(home+'/Delete_myself')
 print "finished cleaning"
-    
-        
-                          
-                                                                              
+                                                                                  
 ############# This is the end of the programm !!! ###################                        
